@@ -1,5 +1,4 @@
 # EFM32
-AssessmentTask_EFM32
 
 这是EFM32TG11B系列微处理开发所需要的各种功能文件，其中包含3个文件夹：
 
