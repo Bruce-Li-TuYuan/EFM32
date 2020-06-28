@@ -1,32 +1,34 @@
-/***************************************************************************//**
- * @file
+/**************************************************************************//**
+ * @file efm32tg11b_vdac.h
  * @brief EFM32TG11B_VDAC register and bit field definitions
- *******************************************************************************
+ * @version 5.4.0
+ ******************************************************************************
  * # License
- * <b>Copyright 2020 Silicon Laboratories Inc. www.silabs.com</b>
- *******************************************************************************
- *
- * SPDX-License-Identifier: Zlib
- *
- * The licensor of this software is Silicon Laboratories Inc.
- *
- * This software is provided 'as-is', without any express or implied
- * warranty. In no event will the authors be held liable for any damages
- * arising from the use of this software.
+ * <b>Copyright 2017 Silicon Laboratories, Inc. www.silabs.com</b>
+ ******************************************************************************
  *
  * Permission is granted to anyone to use this software for any purpose,
  * including commercial applications, and to alter it and redistribute it
  * freely, subject to the following restrictions:
  *
  * 1. The origin of this software must not be misrepresented; you must not
- *    claim that you wrote the original software. If you use this software
- *    in a product, an acknowledgment in the product documentation would be
- *    appreciated but is not required.
+ *    claim that you wrote the original software.@n
  * 2. Altered source versions must be plainly marked as such, and must not be
- *    misrepresented as being the original software.
+ *    misrepresented as being the original software.@n
  * 3. This notice may not be removed or altered from any source distribution.
  *
- ******************************************************************************/
+ * DISCLAIMER OF WARRANTY/LIMITATION OF REMEDIES: Silicon Laboratories, Inc.
+ * has no obligation to support this Software. Silicon Laboratories, Inc. is
+ * providing the Software "AS IS", with no express or implied warranties of any
+ * kind, including, but not limited to, any implied warranties of
+ * merchantability or fitness for any particular purpose or warranties against
+ * infringement of any proprietary rights of a third party.
+ *
+ * Silicon Laboratories, Inc. will not be liable for any consequential,
+ * incidental, or special damages, or any other relief, or for any claim by
+ * any third party, arising from your use of this Software.
+ *
+ *****************************************************************************/
 
 #if defined(__ICCARM__)
 #pragma system_include       /* Treat file as system include file. */
@@ -34,41 +36,41 @@
 #pragma clang system_header  /* Treat file as system include file. */
 #endif
 
-/***************************************************************************//**
- * @addtogroup Parts
- * @{
- ******************************************************************************/
-/***************************************************************************//**
+/**************************************************************************//**
+* @addtogroup Parts
+* @{
+******************************************************************************/
+/**************************************************************************//**
  * @defgroup EFM32TG11B_VDAC VDAC
  * @{
  * @brief EFM32TG11B_VDAC Register Declaration
- ******************************************************************************/
+ *****************************************************************************/
 /** VDAC Register Declaration */
 typedef struct {
-  __IOM uint32_t   CTRL;           /**< Control Register  */
-  __IM uint32_t    STATUS;         /**< Status Register  */
-  __IOM uint32_t   CH0CTRL;        /**< Channel 0 Control Register  */
-  __IOM uint32_t   CH1CTRL;        /**< Channel 1 Control Register  */
-  __IOM uint32_t   CMD;            /**< Command Register  */
-  __IM uint32_t    IF;             /**< Interrupt Flag Register  */
-  __IOM uint32_t   IFS;            /**< Interrupt Flag Set Register  */
-  __IOM uint32_t   IFC;            /**< Interrupt Flag Clear Register  */
-  __IOM uint32_t   IEN;            /**< Interrupt Enable Register  */
-  __IOM uint32_t   CH0DATA;        /**< Channel 0 Data Register  */
-  __IOM uint32_t   CH1DATA;        /**< Channel 1 Data Register  */
-  __IOM uint32_t   COMBDATA;       /**< Combined Data Register  */
-  __IOM uint32_t   CAL;            /**< Calibration Register  */
+  __IOM uint32_t   CTRL;          /**< Control Register  */
+  __IM uint32_t    STATUS;        /**< Status Register  */
+  __IOM uint32_t   CH0CTRL;       /**< Channel 0 Control Register  */
+  __IOM uint32_t   CH1CTRL;       /**< Channel 1 Control Register  */
+  __IOM uint32_t   CMD;           /**< Command Register  */
+  __IM uint32_t    IF;            /**< Interrupt Flag Register  */
+  __IOM uint32_t   IFS;           /**< Interrupt Flag Set Register  */
+  __IOM uint32_t   IFC;           /**< Interrupt Flag Clear Register  */
+  __IOM uint32_t   IEN;           /**< Interrupt Enable Register  */
+  __IOM uint32_t   CH0DATA;       /**< Channel 0 Data Register  */
+  __IOM uint32_t   CH1DATA;       /**< Channel 1 Data Register  */
+  __IOM uint32_t   COMBDATA;      /**< Combined Data Register  */
+  __IOM uint32_t   CAL;           /**< Calibration Register  */
 
-  uint32_t         RESERVED0[27U]; /**< Reserved registers */
-  VDAC_OPA_TypeDef OPA[4U];        /**< OPA Registers */
-} VDAC_TypeDef;                    /** @} */
+  uint32_t         RESERVED0[27]; /**< Reserved registers */
+  VDAC_OPA_TypeDef OPA[4];        /**< OPA Registers */
+} VDAC_TypeDef;                   /** @} */
 
-/***************************************************************************//**
+/**************************************************************************//**
  * @addtogroup EFM32TG11B_VDAC
  * @{
  * @defgroup EFM32TG11B_VDAC_BitFields VDAC Bit Fields
  * @{
- ******************************************************************************/
+ *****************************************************************************/
 
 /* Bit fields for VDAC CTRL */
 #define _VDAC_CTRL_RESETVALUE                              0x00000000UL                                /**< Default value for VDAC_CTRL */

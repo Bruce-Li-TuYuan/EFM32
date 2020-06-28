@@ -1,33 +1,35 @@
-/***************************************************************************//**
- * @file
+/**************************************************************************//**
+ * @file efm32tg11b120f128gm64.h
  * @brief CMSIS Cortex-M Peripheral Access Layer Header File
  *        for EFM32TG11B120F128GM64
- *******************************************************************************
+ * @version 5.4.0
+ ******************************************************************************
  * # License
- * <b>Copyright 2020 Silicon Laboratories Inc. www.silabs.com</b>
- *******************************************************************************
- *
- * SPDX-License-Identifier: Zlib
- *
- * The licensor of this software is Silicon Laboratories Inc.
- *
- * This software is provided 'as-is', without any express or implied
- * warranty. In no event will the authors be held liable for any damages
- * arising from the use of this software.
+ * <b>Copyright 2017 Silicon Laboratories, Inc. www.silabs.com</b>
+ ******************************************************************************
  *
  * Permission is granted to anyone to use this software for any purpose,
  * including commercial applications, and to alter it and redistribute it
  * freely, subject to the following restrictions:
  *
  * 1. The origin of this software must not be misrepresented; you must not
- *    claim that you wrote the original software. If you use this software
- *    in a product, an acknowledgment in the product documentation would be
- *    appreciated but is not required.
+ *    claim that you wrote the original software.@n
  * 2. Altered source versions must be plainly marked as such, and must not be
- *    misrepresented as being the original software.
+ *    misrepresented as being the original software.@n
  * 3. This notice may not be removed or altered from any source distribution.
  *
- ******************************************************************************/
+ * DISCLAIMER OF WARRANTY/LIMITATION OF REMEDIES: Silicon Laboratories, Inc.
+ * has no obligation to support this Software. Silicon Laboratories, Inc. is
+ * providing the Software "AS IS", with no express or implied warranties of any
+ * kind, including, but not limited to, any implied warranties of
+ * merchantability or fitness for any particular purpose or warranties against
+ * infringement of any proprietary rights of a third party.
+ *
+ * Silicon Laboratories, Inc. will not be liable for any consequential,
+ * incidental, or special damages, or any other relief, or for any claim by
+ * any third party, arising from your use of this Software.
+ *
+ *****************************************************************************/
 
 #if defined(__ICCARM__)
 #pragma system_include       /* Treat file as system include file. */
@@ -42,15 +44,15 @@
 extern "C" {
 #endif
 
-/***************************************************************************//**
+/**************************************************************************//**
  * @addtogroup Parts
  * @{
- ******************************************************************************/
+ *****************************************************************************/
 
-/***************************************************************************//**
+/**************************************************************************//**
  * @defgroup EFM32TG11B120F128GM64 EFM32TG11B120F128GM64
  * @{
- ******************************************************************************/
+ *****************************************************************************/
 
 /** Interrupt Number Definition */
 typedef enum IRQn{
@@ -95,22 +97,22 @@ typedef enum IRQn{
   CAN0_IRQn           = 31, /*!< 16+31 EFM32 CAN0 Interrupt */
 } IRQn_Type;
 
-/***************************************************************************//**
+/**************************************************************************//**
  * @defgroup EFM32TG11B120F128GM64_Core Core
  * @{
  * @brief Processor and Core Peripheral Section
- ******************************************************************************/
-#define __MPU_PRESENT             1U /**< Presence of MPU  */
-#define __VTOR_PRESENT            1U /**< Presence of VTOR register in SCB */
-#define __NVIC_PRIO_BITS          2U /**< NVIC interrupt priority bits */
-#define __Vendor_SysTickConfig    0U /**< Is 1 if different SysTick counter is used */
+ *****************************************************************************/
+#define __MPU_PRESENT             1 /**< Presence of MPU  */
+#define __VTOR_PRESENT            1 /**< Presence of VTOR register in SCB */
+#define __NVIC_PRIO_BITS          2 /**< NVIC interrupt priority bits */
+#define __Vendor_SysTickConfig    0 /**< Is 1 if different SysTick counter is used */
 
 /** @} End of group EFM32TG11B120F128GM64_Core */
 
-/***************************************************************************//**
- * @defgroup EFM32TG11B120F128GM64_Part Part
- * @{
- ******************************************************************************/
+/**************************************************************************//**
+* @defgroup EFM32TG11B120F128GM64_Part Part
+* @{
+******************************************************************************/
 
 /** Part family */
 #define _EFM32_TINY_FAMILY                       1   /**< Tiny Gecko MCU Family  */
@@ -135,64 +137,64 @@ typedef enum IRQn{
 #define PART_NUMBER                "EFM32TG11B120F128GM64" /**< Part Number */
 
 /** Memory Base addresses and limits */
-#define PER1_BITCLR_MEM_BASE       (0x44050000UL) /**< PER1_BITCLR base address  */
-#define PER1_BITCLR_MEM_SIZE       (0xA0000UL)    /**< PER1_BITCLR available address space  */
-#define PER1_BITCLR_MEM_END        (0x440EFFFFUL) /**< PER1_BITCLR end address  */
-#define PER1_BITCLR_MEM_BITS       (0x00000014UL) /**< PER1_BITCLR used bits  */
-#define PER1_BITSET_MEM_BASE       (0x46050000UL) /**< PER1_BITSET base address  */
-#define PER1_BITSET_MEM_SIZE       (0xA0000UL)    /**< PER1_BITSET available address space  */
-#define PER1_BITSET_MEM_END        (0x460EFFFFUL) /**< PER1_BITSET end address  */
-#define PER1_BITSET_MEM_BITS       (0x00000014UL) /**< PER1_BITSET used bits  */
-#define CRYPTO0_BITCLR_MEM_BASE    (0x440F0000UL) /**< CRYPTO0_BITCLR base address  */
-#define CRYPTO0_BITCLR_MEM_SIZE    (0x400UL)      /**< CRYPTO0_BITCLR available address space  */
-#define CRYPTO0_BITCLR_MEM_END     (0x440F03FFUL) /**< CRYPTO0_BITCLR end address  */
-#define CRYPTO0_BITCLR_MEM_BITS    (0x0000000AUL) /**< CRYPTO0_BITCLR used bits  */
-#define CRYPTO0_BITSET_MEM_BASE    (0x460F0000UL) /**< CRYPTO0_BITSET base address  */
-#define CRYPTO0_BITSET_MEM_SIZE    (0x400UL)      /**< CRYPTO0_BITSET available address space  */
-#define CRYPTO0_BITSET_MEM_END     (0x460F03FFUL) /**< CRYPTO0_BITSET end address  */
-#define CRYPTO0_BITSET_MEM_BITS    (0x0000000AUL) /**< CRYPTO0_BITSET used bits  */
-#define RAM0_CODE_MEM_BASE         (0x10000000UL) /**< RAM0_CODE base address  */
-#define RAM0_CODE_MEM_SIZE         (0x8000UL)     /**< RAM0_CODE available address space  */
-#define RAM0_CODE_MEM_END          (0x10007FFFUL) /**< RAM0_CODE end address  */
-#define RAM0_CODE_MEM_BITS         (0x0000000FUL) /**< RAM0_CODE used bits  */
-#define FLASH_MEM_BASE             (0x00000000UL) /**< FLASH base address  */
-#define FLASH_MEM_SIZE             (0x10000000UL) /**< FLASH available address space  */
-#define FLASH_MEM_END              (0x0FFFFFFFUL) /**< FLASH end address  */
-#define FLASH_MEM_BITS             (0x0000001CUL) /**< FLASH used bits  */
-#define PER1_MEM_BASE              (0x40050000UL) /**< PER1 base address  */
-#define PER1_MEM_SIZE              (0xA0000UL)    /**< PER1 available address space  */
-#define PER1_MEM_END               (0x400EFFFFUL) /**< PER1 end address  */
-#define PER1_MEM_BITS              (0x00000014UL) /**< PER1 used bits  */
-#define RAM0_MEM_BASE              (0x20000000UL) /**< RAM0 base address  */
-#define RAM0_MEM_SIZE              (0x8000UL)     /**< RAM0 available address space  */
-#define RAM0_MEM_END               (0x20007FFFUL) /**< RAM0 end address  */
-#define RAM0_MEM_BITS              (0x0000000FUL) /**< RAM0 used bits  */
-#define CRYPTO0_MEM_BASE           (0x400F0000UL) /**< CRYPTO0 base address  */
-#define CRYPTO0_MEM_SIZE           (0x400UL)      /**< CRYPTO0 available address space  */
-#define CRYPTO0_MEM_END            (0x400F03FFUL) /**< CRYPTO0 end address  */
-#define CRYPTO0_MEM_BITS           (0x0000000AUL) /**< CRYPTO0 used bits  */
-#define PER_BITSET_MEM_BASE        (0x46000000UL) /**< PER_BITSET base address  */
-#define PER_BITSET_MEM_SIZE        (0x50000UL)    /**< PER_BITSET available address space  */
-#define PER_BITSET_MEM_END         (0x4604FFFFUL) /**< PER_BITSET end address  */
-#define PER_BITSET_MEM_BITS        (0x00000013UL) /**< PER_BITSET used bits  */
-#define DEVICE_MEM_BASE            (0xF0040000UL) /**< DEVICE base address  */
-#define DEVICE_MEM_SIZE            (0x1000UL)     /**< DEVICE available address space  */
-#define DEVICE_MEM_END             (0xF0040FFFUL) /**< DEVICE end address  */
-#define DEVICE_MEM_BITS            (0x0000000CUL) /**< DEVICE used bits  */
-#define PER_MEM_BASE               (0x40000000UL) /**< PER base address  */
-#define PER_MEM_SIZE               (0x50000UL)    /**< PER available address space  */
-#define PER_MEM_END                (0x4004FFFFUL) /**< PER end address  */
-#define PER_MEM_BITS               (0x00000013UL) /**< PER used bits  */
-#define PER_BITCLR_MEM_BASE        (0x44000000UL) /**< PER_BITCLR base address  */
-#define PER_BITCLR_MEM_SIZE        (0x50000UL)    /**< PER_BITCLR available address space  */
-#define PER_BITCLR_MEM_END         (0x4404FFFFUL) /**< PER_BITCLR end address  */
-#define PER_BITCLR_MEM_BITS        (0x00000013UL) /**< PER_BITCLR used bits  */
+#define FLASH_MEM_BASE             ((uint32_t) 0x00000000UL) /**< FLASH base address  */
+#define FLASH_MEM_SIZE             ((uint32_t) 0x10000000UL) /**< FLASH available address space  */
+#define FLASH_MEM_END              ((uint32_t) 0x0FFFFFFFUL) /**< FLASH end address  */
+#define FLASH_MEM_BITS             ((uint32_t) 0x0000001CUL) /**< FLASH used bits  */
+#define RAM0_CODE_MEM_BASE         ((uint32_t) 0x10000000UL) /**< RAM0_CODE base address  */
+#define RAM0_CODE_MEM_SIZE         ((uint32_t) 0x8000UL)     /**< RAM0_CODE available address space  */
+#define RAM0_CODE_MEM_END          ((uint32_t) 0x10007FFFUL) /**< RAM0_CODE end address  */
+#define RAM0_CODE_MEM_BITS         ((uint32_t) 0x0000000FUL) /**< RAM0_CODE used bits  */
+#define CRYPTO0_MEM_BASE           ((uint32_t) 0x400F0000UL) /**< CRYPTO0 base address  */
+#define CRYPTO0_MEM_SIZE           ((uint32_t) 0x400UL)      /**< CRYPTO0 available address space  */
+#define CRYPTO0_MEM_END            ((uint32_t) 0x400F03FFUL) /**< CRYPTO0 end address  */
+#define CRYPTO0_MEM_BITS           ((uint32_t) 0x0000000AUL) /**< CRYPTO0 used bits  */
+#define PER_BITCLR_MEM_BASE        ((uint32_t) 0x44000000UL) /**< PER_BITCLR base address  */
+#define PER_BITCLR_MEM_SIZE        ((uint32_t) 0x50000UL)    /**< PER_BITCLR available address space  */
+#define PER_BITCLR_MEM_END         ((uint32_t) 0x4404FFFFUL) /**< PER_BITCLR end address  */
+#define PER_BITCLR_MEM_BITS        ((uint32_t) 0x00000013UL) /**< PER_BITCLR used bits  */
+#define PER1_BITCLR_MEM_BASE       ((uint32_t) 0x44050000UL) /**< PER1_BITCLR base address  */
+#define PER1_BITCLR_MEM_SIZE       ((uint32_t) 0xA0000UL)    /**< PER1_BITCLR available address space  */
+#define PER1_BITCLR_MEM_END        ((uint32_t) 0x440EFFFFUL) /**< PER1_BITCLR end address  */
+#define PER1_BITCLR_MEM_BITS       ((uint32_t) 0x00000014UL) /**< PER1_BITCLR used bits  */
+#define PER1_BITSET_MEM_BASE       ((uint32_t) 0x46050000UL) /**< PER1_BITSET base address  */
+#define PER1_BITSET_MEM_SIZE       ((uint32_t) 0xA0000UL)    /**< PER1_BITSET available address space  */
+#define PER1_BITSET_MEM_END        ((uint32_t) 0x460EFFFFUL) /**< PER1_BITSET end address  */
+#define PER1_BITSET_MEM_BITS       ((uint32_t) 0x00000014UL) /**< PER1_BITSET used bits  */
+#define CRYPTO0_BITSET_MEM_BASE    ((uint32_t) 0x460F0000UL) /**< CRYPTO0_BITSET base address  */
+#define CRYPTO0_BITSET_MEM_SIZE    ((uint32_t) 0x400UL)      /**< CRYPTO0_BITSET available address space  */
+#define CRYPTO0_BITSET_MEM_END     ((uint32_t) 0x460F03FFUL) /**< CRYPTO0_BITSET end address  */
+#define CRYPTO0_BITSET_MEM_BITS    ((uint32_t) 0x0000000AUL) /**< CRYPTO0_BITSET used bits  */
+#define CRYPTO0_BITCLR_MEM_BASE    ((uint32_t) 0x440F0000UL) /**< CRYPTO0_BITCLR base address  */
+#define CRYPTO0_BITCLR_MEM_SIZE    ((uint32_t) 0x400UL)      /**< CRYPTO0_BITCLR available address space  */
+#define CRYPTO0_BITCLR_MEM_END     ((uint32_t) 0x440F03FFUL) /**< CRYPTO0_BITCLR end address  */
+#define CRYPTO0_BITCLR_MEM_BITS    ((uint32_t) 0x0000000AUL) /**< CRYPTO0_BITCLR used bits  */
+#define PER_BITSET_MEM_BASE        ((uint32_t) 0x46000000UL) /**< PER_BITSET base address  */
+#define PER_BITSET_MEM_SIZE        ((uint32_t) 0x50000UL)    /**< PER_BITSET available address space  */
+#define PER_BITSET_MEM_END         ((uint32_t) 0x4604FFFFUL) /**< PER_BITSET end address  */
+#define PER_BITSET_MEM_BITS        ((uint32_t) 0x00000013UL) /**< PER_BITSET used bits  */
+#define PER_MEM_BASE               ((uint32_t) 0x40000000UL) /**< PER base address  */
+#define PER_MEM_SIZE               ((uint32_t) 0x50000UL)    /**< PER available address space  */
+#define PER_MEM_END                ((uint32_t) 0x4004FFFFUL) /**< PER end address  */
+#define PER_MEM_BITS               ((uint32_t) 0x00000013UL) /**< PER used bits  */
+#define PER1_MEM_BASE              ((uint32_t) 0x40050000UL) /**< PER1 base address  */
+#define PER1_MEM_SIZE              ((uint32_t) 0xA0000UL)    /**< PER1 available address space  */
+#define PER1_MEM_END               ((uint32_t) 0x400EFFFFUL) /**< PER1 end address  */
+#define PER1_MEM_BITS              ((uint32_t) 0x00000014UL) /**< PER1 used bits  */
+#define DEVICE_MEM_BASE            ((uint32_t) 0xF0040000UL) /**< DEVICE base address  */
+#define DEVICE_MEM_SIZE            ((uint32_t) 0x1000UL)     /**< DEVICE available address space  */
+#define DEVICE_MEM_END             ((uint32_t) 0xF0040FFFUL) /**< DEVICE end address  */
+#define DEVICE_MEM_BITS            ((uint32_t) 0x0000000CUL) /**< DEVICE used bits  */
+#define RAM0_MEM_BASE              ((uint32_t) 0x20000000UL) /**< RAM0 base address  */
+#define RAM0_MEM_SIZE              ((uint32_t) 0x8000UL)     /**< RAM0 available address space  */
+#define RAM0_MEM_END               ((uint32_t) 0x20007FFFUL) /**< RAM0 end address  */
+#define RAM0_MEM_BITS              ((uint32_t) 0x0000000FUL) /**< RAM0 used bits  */
 
 /** Single RAM space macros combining both RAM ports to match legacy, single-RAM-port chips */
-#define RAM_MEM_BASE               (0x20000000UL) /**< RAM base address  */
-#define RAM_MEM_SIZE               (0x8000UL)     /**< RAM available address space  */
-#define RAM_MEM_END                (0x20007FFFUL) /**< RAM end address  */
-#define RAM_MEM_BITS               (0x0000000FUL) /**< RAM used bits  */
+#define RAM_MEM_BASE               ((uint32_t) 0x20000000UL) /**< RAM base address  */
+#define RAM_MEM_SIZE               ((uint32_t) 0x8000UL)     /**< RAM available address space  */
+#define RAM_MEM_END                ((uint32_t) 0x20007FFFUL) /**< RAM end address  */
+#define RAM_MEM_BITS               ((uint32_t) 0x0000000FUL) /**< RAM used bits  */
 
 /** Flash and SRAM limits for EFM32TG11B120F128GM64 */
 #define FLASH_BASE                 (0x00000000UL) /**< Flash Base Address */
@@ -200,7 +202,7 @@ typedef enum IRQn{
 #define FLASH_PAGE_SIZE            2048U          /**< Flash Memory page size */
 #define SRAM_BASE                  (0x20000000UL) /**< SRAM Base Address */
 #define SRAM_SIZE                  (0x00008000UL) /**< Available SRAM Memory */
-#define __CM0PLUS_REV              0x0001U        /**< Cortex-M0+ Core revision r0p1 */
+#define __CM0PLUS_REV              0x001          /**< Cortex-M0+ Core revision r0p1 */
 #define PRS_CHAN_COUNT             8              /**< Number of PRS channels */
 #define DMA_CHAN_COUNT             8              /**< Number of DMA channels */
 #define EXT_IRQ_COUNT              32             /**< Number of External (NVIC) interrupts */
@@ -284,61 +286,62 @@ typedef enum IRQn{
 #include "core_cm0plus.h"      /* Cortex-M0+ processor and core peripherals */
 #include "system_efm32tg11b.h" /* System Header File */
 
-/***************************************************************************//**
+/**************************************************************************//**
  * @defgroup EFM32TG11B120F128GM64_Peripheral_TypeDefs Peripheral TypeDefs
  * @{
  * @brief Device Specific Peripheral Register Structures
- ******************************************************************************/
+ *****************************************************************************/
 
 #include "efm32tg11b_msc.h"
 #include "efm32tg11b_emu.h"
 #include "efm32tg11b_rmu.h"
 
-/***************************************************************************//**
+/**************************************************************************//**
  * @defgroup EFM32TG11B120F128GM64_CMU CMU
  * @{
  * @brief EFM32TG11B120F128GM64_CMU Register Declaration
- ******************************************************************************/
+ *****************************************************************************/
 /** CMU Register Declaration */
 typedef struct {
   __IOM uint32_t CTRL;                /**< CMU Control Register  */
 
-  uint32_t       RESERVED0[3U];       /**< Reserved for future use **/
+  uint32_t       RESERVED0[3];        /**< Reserved for future use **/
   __IOM uint32_t HFRCOCTRL;           /**< HFRCO Control Register  */
 
-  uint32_t       RESERVED1[1U];       /**< Reserved for future use **/
+  uint32_t       RESERVED1[1];        /**< Reserved for future use **/
   __IOM uint32_t AUXHFRCOCTRL;        /**< AUXHFRCO Control Register  */
 
-  uint32_t       RESERVED2[1U];       /**< Reserved for future use **/
+  uint32_t       RESERVED2[1];        /**< Reserved for future use **/
   __IOM uint32_t LFRCOCTRL;           /**< LFRCO Control Register  */
   __IOM uint32_t HFXOCTRL;            /**< HFXO Control Register  */
-  __IOM uint32_t HFXOCTRL1;           /**< HFXO Control 1  */
+
+  uint32_t       RESERVED3[1];        /**< Reserved for future use **/
   __IOM uint32_t HFXOSTARTUPCTRL;     /**< HFXO Startup Control  */
   __IOM uint32_t HFXOSTEADYSTATECTRL; /**< HFXO Steady State Control  */
   __IOM uint32_t HFXOTIMEOUTCTRL;     /**< HFXO Timeout Control  */
   __IOM uint32_t LFXOCTRL;            /**< LFXO Control Register  */
 
-  uint32_t       RESERVED3[1U];       /**< Reserved for future use **/
+  uint32_t       RESERVED4[1];        /**< Reserved for future use **/
   __IOM uint32_t DPLLCTRL;            /**< DPLL Control Register  */
   __IOM uint32_t DPLLCTRL1;           /**< DPLL Control Register  */
-  uint32_t       RESERVED4[2U];       /**< Reserved for future use **/
+  uint32_t       RESERVED5[2];        /**< Reserved for future use **/
   __IOM uint32_t CALCTRL;             /**< Calibration Control Register  */
   __IOM uint32_t CALCNT;              /**< Calibration Counter Register  */
-  uint32_t       RESERVED5[2U];       /**< Reserved for future use **/
+  uint32_t       RESERVED6[2];        /**< Reserved for future use **/
   __IOM uint32_t OSCENCMD;            /**< Oscillator Enable/Disable Command Register  */
   __IOM uint32_t CMD;                 /**< Command Register  */
-  uint32_t       RESERVED6[2U];       /**< Reserved for future use **/
+  uint32_t       RESERVED7[2];        /**< Reserved for future use **/
   __IOM uint32_t DBGCLKSEL;           /**< Debug Trace Clock Select  */
   __IOM uint32_t HFCLKSEL;            /**< High Frequency Clock Select Command Register  */
-  uint32_t       RESERVED7[2U];       /**< Reserved for future use **/
+  uint32_t       RESERVED8[2];        /**< Reserved for future use **/
   __IOM uint32_t LFACLKSEL;           /**< Low Frequency A Clock Select Register  */
   __IOM uint32_t LFBCLKSEL;           /**< Low Frequency B Clock Select Register  */
   __IOM uint32_t LFECLKSEL;           /**< Low Frequency E Clock Select Register  */
 
-  uint32_t       RESERVED8[1U];       /**< Reserved for future use **/
+  uint32_t       RESERVED9[1];        /**< Reserved for future use **/
   __IM uint32_t  STATUS;              /**< Status Register  */
   __IM uint32_t  HFCLKSTATUS;         /**< HFCLK Status Register  */
-  uint32_t       RESERVED9[1U];       /**< Reserved for future use **/
+  uint32_t       RESERVED10[1];       /**< Reserved for future use **/
   __IM uint32_t  HFXOTRIMSTATUS;      /**< HFXO Trim Status  */
   __IM uint32_t  IF;                  /**< Interrupt Flag Register  */
   __IOM uint32_t IFS;                 /**< Interrupt Flag Set Register  */
@@ -346,47 +349,47 @@ typedef struct {
   __IOM uint32_t IEN;                 /**< Interrupt Enable Register  */
   __IOM uint32_t HFBUSCLKEN0;         /**< High Frequency Bus Clock Enable Register 0  */
 
-  uint32_t       RESERVED10[3U];      /**< Reserved for future use **/
+  uint32_t       RESERVED11[3];       /**< Reserved for future use **/
   __IOM uint32_t HFPERCLKEN0;         /**< High Frequency Peripheral Clock Enable Register 0  */
   __IOM uint32_t HFPERCLKEN1;         /**< High Frequency Peripheral Clock Enable Register 1  */
 
-  uint32_t       RESERVED11[6U];      /**< Reserved for future use **/
+  uint32_t       RESERVED12[6];       /**< Reserved for future use **/
   __IOM uint32_t LFACLKEN0;           /**< Low Frequency a Clock Enable Register 0  (Async Reg)  */
-  uint32_t       RESERVED12[1U];      /**< Reserved for future use **/
+  uint32_t       RESERVED13[1];       /**< Reserved for future use **/
   __IOM uint32_t LFBCLKEN0;           /**< Low Frequency B Clock Enable Register 0 (Async Reg)  */
 
-  uint32_t       RESERVED13[1U];      /**< Reserved for future use **/
+  uint32_t       RESERVED14[1];       /**< Reserved for future use **/
   __IOM uint32_t LFECLKEN0;           /**< Low Frequency E Clock Enable Register 0 (Async Reg)  */
-  uint32_t       RESERVED14[3U];      /**< Reserved for future use **/
+  uint32_t       RESERVED15[3];       /**< Reserved for future use **/
   __IOM uint32_t HFPRESC;             /**< High Frequency Clock Prescaler Register  */
   __IOM uint32_t HFBUSPRESC;          /**< High Frequency Bus Clock Prescaler Register  */
   __IOM uint32_t HFCOREPRESC;         /**< High Frequency Core Clock Prescaler Register  */
   __IOM uint32_t HFPERPRESC;          /**< High Frequency Peripheral Clock Prescaler Register  */
 
-  uint32_t       RESERVED15[1U];      /**< Reserved for future use **/
+  uint32_t       RESERVED16[1];       /**< Reserved for future use **/
   __IOM uint32_t HFEXPPRESC;          /**< High Frequency Export Clock Prescaler Register  */
   __IOM uint32_t HFPERPRESCB;         /**< High Frequency Peripheral Clock Prescaler B Register  */
   __IOM uint32_t HFPERPRESCC;         /**< High Frequency Peripheral Clock Prescaler C Register  */
   __IOM uint32_t LFAPRESC0;           /**< Low Frequency a Prescaler Register 0 (Async Reg)  */
-  uint32_t       RESERVED16[1U];      /**< Reserved for future use **/
+  uint32_t       RESERVED17[1];       /**< Reserved for future use **/
   __IOM uint32_t LFBPRESC0;           /**< Low Frequency B Prescaler Register 0  (Async Reg)  */
-  uint32_t       RESERVED17[1U];      /**< Reserved for future use **/
+  uint32_t       RESERVED18[1];       /**< Reserved for future use **/
   __IOM uint32_t LFEPRESC0;           /**< Low Frequency E Prescaler Register 0  (Async Reg)  */
 
-  uint32_t       RESERVED18[3U];      /**< Reserved for future use **/
+  uint32_t       RESERVED19[3];       /**< Reserved for future use **/
   __IM uint32_t  SYNCBUSY;            /**< Synchronization Busy Register  */
   __IOM uint32_t FREEZE;              /**< Freeze Register  */
-  uint32_t       RESERVED19[2U];      /**< Reserved for future use **/
+  uint32_t       RESERVED20[2];       /**< Reserved for future use **/
   __IOM uint32_t PCNTCTRL;            /**< PCNT Control Register  */
 
-  uint32_t       RESERVED20[2U];      /**< Reserved for future use **/
+  uint32_t       RESERVED21[2];       /**< Reserved for future use **/
   __IOM uint32_t ADCCTRL;             /**< ADC Control Register  */
 
-  uint32_t       RESERVED21[4U];      /**< Reserved for future use **/
+  uint32_t       RESERVED22[4];       /**< Reserved for future use **/
   __IOM uint32_t ROUTEPEN;            /**< I/O Routing Pin Enable Register  */
   __IOM uint32_t ROUTELOC0;           /**< I/O Routing Location Register  */
   __IOM uint32_t ROUTELOC1;           /**< I/O Routing Location Register  */
-  uint32_t       RESERVED22[1U];      /**< Reserved for future use **/
+  uint32_t       RESERVED23[1];       /**< Reserved for future use **/
   __IOM uint32_t LOCK;                /**< Configuration Lock Register  */
   __IOM uint32_t HFRCOSS;             /**< HFRCO Spread Spectrum Register  */
 } CMU_TypeDef;                        /** @} */
@@ -424,28 +427,28 @@ typedef struct {
 #include "efm32tg11b_wdog_pch.h"
 #include "efm32tg11b_wdog.h"
 
-/***************************************************************************//**
+/**************************************************************************//**
  * @defgroup EFM32TG11B120F128GM64_SMU SMU
  * @{
  * @brief EFM32TG11B120F128GM64_SMU Register Declaration
- ******************************************************************************/
+ *****************************************************************************/
 /** SMU Register Declaration */
 typedef struct {
-  uint32_t       RESERVED0[3U];  /**< Reserved for future use **/
-  __IM uint32_t  IF;             /**< Interrupt Flag Register  */
-  __IOM uint32_t IFS;            /**< Interrupt Flag Set Register  */
-  __IOM uint32_t IFC;            /**< Interrupt Flag Clear Register  */
-  __IOM uint32_t IEN;            /**< Interrupt Enable Register  */
+  uint32_t       RESERVED0[3];  /**< Reserved for future use **/
+  __IM uint32_t  IF;            /**< Interrupt Flag Register  */
+  __IOM uint32_t IFS;           /**< Interrupt Flag Set Register  */
+  __IOM uint32_t IFC;           /**< Interrupt Flag Clear Register  */
+  __IOM uint32_t IEN;           /**< Interrupt Enable Register  */
 
-  uint32_t       RESERVED1[9U];  /**< Reserved for future use **/
-  __IOM uint32_t PPUCTRL;        /**< PPU Control Register  */
-  uint32_t       RESERVED2[3U];  /**< Reserved for future use **/
-  __IOM uint32_t PPUPATD0;       /**< PPU Privilege Access Type Descriptor 0  */
-  __IOM uint32_t PPUPATD1;       /**< PPU Privilege Access Type Descriptor 1  */
+  uint32_t       RESERVED1[9];  /**< Reserved for future use **/
+  __IOM uint32_t PPUCTRL;       /**< PPU Control Register  */
+  uint32_t       RESERVED2[3];  /**< Reserved for future use **/
+  __IOM uint32_t PPUPATD0;      /**< PPU Privilege Access Type Descriptor 0  */
+  __IOM uint32_t PPUPATD1;      /**< PPU Privilege Access Type Descriptor 1  */
 
-  uint32_t       RESERVED3[14U]; /**< Reserved for future use **/
-  __IM uint32_t  PPUFS;          /**< PPU Fault Status  */
-} SMU_TypeDef;                   /** @} */
+  uint32_t       RESERVED3[14]; /**< Reserved for future use **/
+  __IM uint32_t  PPUFS;         /**< PPU Fault Status  */
+} SMU_TypeDef;                  /** @} */
 
 #include "efm32tg11b_trng.h"
 #include "efm32tg11b_mtb.h"
@@ -455,10 +458,10 @@ typedef struct {
 
 /** @} End of group EFM32TG11B120F128GM64_Peripheral_TypeDefs  */
 
-/***************************************************************************//**
+/**************************************************************************//**
  * @defgroup EFM32TG11B120F128GM64_Peripheral_Base Peripheral Memory Map
  * @{
- ******************************************************************************/
+ *****************************************************************************/
 
 #define MSC_BASE          (0x40000000UL) /**< MSC base address  */
 #define EMU_BASE          (0x400E3000UL) /**< EMU base address  */
@@ -497,15 +500,15 @@ typedef struct {
 #define TRNG0_BASE        (0x4001D000UL) /**< TRNG0 base address  */
 #define MTB_BASE          (0xF0040000UL) /**< MTB base address  */
 #define DEVINFO_BASE      (0x0FE081B0UL) /**< DEVINFO base address */
-#define ROMTABLE_BASE     (0xF00FFFD0UL) /**< ROMTABLE base address */
+#define ROMTABLE_BASE     (0xE00FF000UL) /**< ROMTABLE base address */
 #define LOCKBITS_BASE     (0x0FE04000UL) /**< Lock-bits page base address */
 #define USERDATA_BASE     (0x0FE00000UL) /**< User data page base address */
 /** @} End of group EFM32TG11B120F128GM64_Peripheral_Base */
 
-/***************************************************************************//**
+/**************************************************************************//**
  * @defgroup EFM32TG11B120F128GM64_Peripheral_Declaration Peripheral Declarations
  * @{
- ******************************************************************************/
+ *****************************************************************************/
 
 #define MSC          ((MSC_TypeDef *) MSC_BASE)             /**< MSC base pointer */
 #define EMU          ((EMU_TypeDef *) EMU_BASE)             /**< EMU base pointer */
@@ -548,10 +551,10 @@ typedef struct {
 
 /** @} End of group EFM32TG11B120F128GM64_Peripheral_Declaration */
 
-/***************************************************************************//**
+/**************************************************************************//**
  * @defgroup EFM32TG11B120F128GM64_Peripheral_Offsets Peripheral Offsets
  * @{
- ******************************************************************************/
+ *****************************************************************************/
 
 #define CRYPTO_OFFSET     0x400 /**< Offset in bytes between CRYPTO instances */
 #define CAN_OFFSET        0x400 /**< Offset in bytes between CAN instances */
@@ -571,20 +574,20 @@ typedef struct {
 
 /** @} End of group EFM32TG11B120F128GM64_Peripheral_Offsets */
 
-/***************************************************************************//**
+/**************************************************************************//**
  * @defgroup EFM32TG11B120F128GM64_BitFields Bit Fields
  * @{
- ******************************************************************************/
+ *****************************************************************************/
 
 #include "efm32tg11b_prs_signals.h"
 #include "efm32tg11b_dmareq.h"
 
-/***************************************************************************//**
+/**************************************************************************//**
  * @addtogroup EFM32TG11B120F128GM64_WTIMER
  * @{
  * @defgroup EFM32TG11B120F128GM64_WTIMER_BitFields WTIMER Bit Fields
  * @{
- ******************************************************************************/
+ *****************************************************************************/
 
 /* Bit fields for WTIMER CTRL */
 #define _WTIMER_CTRL_RESETVALUE                     0x00000000UL                              /**< Default value for WTIMER_CTRL */
@@ -1090,13 +1093,13 @@ typedef struct {
 #define _WTIMER_LOCK_TIMERLOCKKEY_SHIFT             0                                         /**< Shift value for TIMER_TIMERLOCKKEY */
 #define _WTIMER_LOCK_TIMERLOCKKEY_MASK              0xFFFFUL                                  /**< Bit mask for TIMER_TIMERLOCKKEY */
 #define _WTIMER_LOCK_TIMERLOCKKEY_DEFAULT           0x00000000UL                              /**< Mode DEFAULT for WTIMER_LOCK */
-#define _WTIMER_LOCK_TIMERLOCKKEY_UNLOCKED          0x00000000UL                              /**< Mode UNLOCKED for WTIMER_LOCK */
 #define _WTIMER_LOCK_TIMERLOCKKEY_LOCK              0x00000000UL                              /**< Mode LOCK for WTIMER_LOCK */
+#define _WTIMER_LOCK_TIMERLOCKKEY_UNLOCKED          0x00000000UL                              /**< Mode UNLOCKED for WTIMER_LOCK */
 #define _WTIMER_LOCK_TIMERLOCKKEY_LOCKED            0x00000001UL                              /**< Mode LOCKED for WTIMER_LOCK */
 #define _WTIMER_LOCK_TIMERLOCKKEY_UNLOCK            0x0000CE80UL                              /**< Mode UNLOCK for WTIMER_LOCK */
 #define WTIMER_LOCK_TIMERLOCKKEY_DEFAULT            (_WTIMER_LOCK_TIMERLOCKKEY_DEFAULT << 0)  /**< Shifted mode DEFAULT for WTIMER_LOCK */
-#define WTIMER_LOCK_TIMERLOCKKEY_UNLOCKED           (_WTIMER_LOCK_TIMERLOCKKEY_UNLOCKED << 0) /**< Shifted mode UNLOCKED for WTIMER_LOCK */
 #define WTIMER_LOCK_TIMERLOCKKEY_LOCK               (_WTIMER_LOCK_TIMERLOCKKEY_LOCK << 0)     /**< Shifted mode LOCK for WTIMER_LOCK */
+#define WTIMER_LOCK_TIMERLOCKKEY_UNLOCKED           (_WTIMER_LOCK_TIMERLOCKKEY_UNLOCKED << 0) /**< Shifted mode UNLOCKED for WTIMER_LOCK */
 #define WTIMER_LOCK_TIMERLOCKKEY_LOCKED             (_WTIMER_LOCK_TIMERLOCKKEY_LOCKED << 0)   /**< Shifted mode LOCKED for WTIMER_LOCK */
 #define WTIMER_LOCK_TIMERLOCKKEY_UNLOCK             (_WTIMER_LOCK_TIMERLOCKKEY_UNLOCK << 0)   /**< Shifted mode UNLOCK for WTIMER_LOCK */
 
@@ -1691,13 +1694,13 @@ typedef struct {
 #define _WTIMER_DTLOCK_LOCKKEY_SHIFT                0                                      /**< Shift value for TIMER_LOCKKEY */
 #define _WTIMER_DTLOCK_LOCKKEY_MASK                 0xFFFFUL                               /**< Bit mask for TIMER_LOCKKEY */
 #define _WTIMER_DTLOCK_LOCKKEY_DEFAULT              0x00000000UL                           /**< Mode DEFAULT for WTIMER_DTLOCK */
-#define _WTIMER_DTLOCK_LOCKKEY_UNLOCKED             0x00000000UL                           /**< Mode UNLOCKED for WTIMER_DTLOCK */
 #define _WTIMER_DTLOCK_LOCKKEY_LOCK                 0x00000000UL                           /**< Mode LOCK for WTIMER_DTLOCK */
+#define _WTIMER_DTLOCK_LOCKKEY_UNLOCKED             0x00000000UL                           /**< Mode UNLOCKED for WTIMER_DTLOCK */
 #define _WTIMER_DTLOCK_LOCKKEY_LOCKED               0x00000001UL                           /**< Mode LOCKED for WTIMER_DTLOCK */
 #define _WTIMER_DTLOCK_LOCKKEY_UNLOCK               0x0000CE80UL                           /**< Mode UNLOCK for WTIMER_DTLOCK */
 #define WTIMER_DTLOCK_LOCKKEY_DEFAULT               (_WTIMER_DTLOCK_LOCKKEY_DEFAULT << 0)  /**< Shifted mode DEFAULT for WTIMER_DTLOCK */
-#define WTIMER_DTLOCK_LOCKKEY_UNLOCKED              (_WTIMER_DTLOCK_LOCKKEY_UNLOCKED << 0) /**< Shifted mode UNLOCKED for WTIMER_DTLOCK */
 #define WTIMER_DTLOCK_LOCKKEY_LOCK                  (_WTIMER_DTLOCK_LOCKKEY_LOCK << 0)     /**< Shifted mode LOCK for WTIMER_DTLOCK */
+#define WTIMER_DTLOCK_LOCKKEY_UNLOCKED              (_WTIMER_DTLOCK_LOCKKEY_UNLOCKED << 0) /**< Shifted mode UNLOCKED for WTIMER_DTLOCK */
 #define WTIMER_DTLOCK_LOCKKEY_LOCKED                (_WTIMER_DTLOCK_LOCKKEY_LOCKED << 0)   /**< Shifted mode LOCKED for WTIMER_DTLOCK */
 #define WTIMER_DTLOCK_LOCKKEY_UNLOCK                (_WTIMER_DTLOCK_LOCKKEY_UNLOCK << 0)   /**< Shifted mode UNLOCK for WTIMER_DTLOCK */
 
@@ -1706,12 +1709,12 @@ typedef struct {
 
 #include "efm32tg11b_uart.h"
 
-/***************************************************************************//**
+/**************************************************************************//**
  * @addtogroup EFM32TG11B120F128GM64_CMU
  * @{
  * @defgroup EFM32TG11B120F128GM64_CMU_BitFields CMU Bit Fields
  * @{
- ******************************************************************************/
+ *****************************************************************************/
 
 /* Bit fields for CMU CTRL */
 #define _CMU_CTRL_RESETVALUE                              0x00100000UL                           /**< Default value for CMU_CTRL */
@@ -2014,30 +2017,6 @@ typedef struct {
 #define _CMU_HFXOCTRL_AUTOSTARTSELEM0EM1_DEFAULT          0x00000000UL                                     /**< Mode DEFAULT for CMU_HFXOCTRL */
 #define CMU_HFXOCTRL_AUTOSTARTSELEM0EM1_DEFAULT           (_CMU_HFXOCTRL_AUTOSTARTSELEM0EM1_DEFAULT << 29) /**< Shifted mode DEFAULT for CMU_HFXOCTRL */
 
-/* Bit fields for CMU HFXOCTRL1 */
-#define _CMU_HFXOCTRL1_RESETVALUE                         0x00002000UL                              /**< Default value for CMU_HFXOCTRL1 */
-#define _CMU_HFXOCTRL1_MASK                               0x00007000UL                              /**< Mask for CMU_HFXOCTRL1 */
-#define _CMU_HFXOCTRL1_PEAKDETTHR_SHIFT                   12                                        /**< Shift value for CMU_PEAKDETTHR */
-#define _CMU_HFXOCTRL1_PEAKDETTHR_MASK                    0x7000UL                                  /**< Bit mask for CMU_PEAKDETTHR */
-#define _CMU_HFXOCTRL1_PEAKDETTHR_THR0                    0x00000000UL                              /**< Mode THR0 for CMU_HFXOCTRL1 */
-#define _CMU_HFXOCTRL1_PEAKDETTHR_THR1                    0x00000001UL                              /**< Mode THR1 for CMU_HFXOCTRL1 */
-#define _CMU_HFXOCTRL1_PEAKDETTHR_DEFAULT                 0x00000002UL                              /**< Mode DEFAULT for CMU_HFXOCTRL1 */
-#define _CMU_HFXOCTRL1_PEAKDETTHR_THR2                    0x00000002UL                              /**< Mode THR2 for CMU_HFXOCTRL1 */
-#define _CMU_HFXOCTRL1_PEAKDETTHR_THR3                    0x00000003UL                              /**< Mode THR3 for CMU_HFXOCTRL1 */
-#define _CMU_HFXOCTRL1_PEAKDETTHR_THR4                    0x00000004UL                              /**< Mode THR4 for CMU_HFXOCTRL1 */
-#define _CMU_HFXOCTRL1_PEAKDETTHR_THR5                    0x00000005UL                              /**< Mode THR5 for CMU_HFXOCTRL1 */
-#define _CMU_HFXOCTRL1_PEAKDETTHR_THR6                    0x00000006UL                              /**< Mode THR6 for CMU_HFXOCTRL1 */
-#define _CMU_HFXOCTRL1_PEAKDETTHR_THR7                    0x00000007UL                              /**< Mode THR7 for CMU_HFXOCTRL1 */
-#define CMU_HFXOCTRL1_PEAKDETTHR_THR0                     (_CMU_HFXOCTRL1_PEAKDETTHR_THR0 << 12)    /**< Shifted mode THR0 for CMU_HFXOCTRL1 */
-#define CMU_HFXOCTRL1_PEAKDETTHR_THR1                     (_CMU_HFXOCTRL1_PEAKDETTHR_THR1 << 12)    /**< Shifted mode THR1 for CMU_HFXOCTRL1 */
-#define CMU_HFXOCTRL1_PEAKDETTHR_DEFAULT                  (_CMU_HFXOCTRL1_PEAKDETTHR_DEFAULT << 12) /**< Shifted mode DEFAULT for CMU_HFXOCTRL1 */
-#define CMU_HFXOCTRL1_PEAKDETTHR_THR2                     (_CMU_HFXOCTRL1_PEAKDETTHR_THR2 << 12)    /**< Shifted mode THR2 for CMU_HFXOCTRL1 */
-#define CMU_HFXOCTRL1_PEAKDETTHR_THR3                     (_CMU_HFXOCTRL1_PEAKDETTHR_THR3 << 12)    /**< Shifted mode THR3 for CMU_HFXOCTRL1 */
-#define CMU_HFXOCTRL1_PEAKDETTHR_THR4                     (_CMU_HFXOCTRL1_PEAKDETTHR_THR4 << 12)    /**< Shifted mode THR4 for CMU_HFXOCTRL1 */
-#define CMU_HFXOCTRL1_PEAKDETTHR_THR5                     (_CMU_HFXOCTRL1_PEAKDETTHR_THR5 << 12)    /**< Shifted mode THR5 for CMU_HFXOCTRL1 */
-#define CMU_HFXOCTRL1_PEAKDETTHR_THR6                     (_CMU_HFXOCTRL1_PEAKDETTHR_THR6 << 12)    /**< Shifted mode THR6 for CMU_HFXOCTRL1 */
-#define CMU_HFXOCTRL1_PEAKDETTHR_THR7                     (_CMU_HFXOCTRL1_PEAKDETTHR_THR7 << 12)    /**< Shifted mode THR7 for CMU_HFXOCTRL1 */
-
 /* Bit fields for CMU HFXOSTARTUPCTRL */
 #define _CMU_HFXOSTARTUPCTRL_RESETVALUE                   0x00000600UL                                     /**< Default value for CMU_HFXOSTARTUPCTRL */
 #define _CMU_HFXOSTARTUPCTRL_MASK                         0x000FFFFFUL                                     /**< Mask for CMU_HFXOSTARTUPCTRL */
@@ -2073,7 +2052,7 @@ typedef struct {
 #define CMU_HFXOSTEADYSTATECTRL_PEAKMONEN_DEFAULT         (_CMU_HFXOSTEADYSTATECTRL_PEAKMONEN_DEFAULT << 27)   /**< Shifted mode DEFAULT for CMU_HFXOSTEADYSTATECTRL */
 
 /* Bit fields for CMU HFXOTIMEOUTCTRL */
-#define _CMU_HFXOTIMEOUTCTRL_RESETVALUE                   0x0000D08EUL                                           /**< Default value for CMU_HFXOTIMEOUTCTRL */
+#define _CMU_HFXOTIMEOUTCTRL_RESETVALUE                   0x0000D04EUL                                           /**< Default value for CMU_HFXOTIMEOUTCTRL */
 #define _CMU_HFXOTIMEOUTCTRL_MASK                         0x0000F0FFUL                                           /**< Mask for CMU_HFXOTIMEOUTCTRL */
 #define _CMU_HFXOTIMEOUTCTRL_STARTUPTIMEOUT_SHIFT         0                                                      /**< Shift value for CMU_STARTUPTIMEOUT */
 #define _CMU_HFXOTIMEOUTCTRL_STARTUPTIMEOUT_MASK          0xFUL                                                  /**< Bit mask for CMU_STARTUPTIMEOUT */
@@ -2115,11 +2094,11 @@ typedef struct {
 #define _CMU_HFXOTIMEOUTCTRL_STEADYTIMEOUT_4CYCLES        0x00000001UL                                           /**< Mode 4CYCLES for CMU_HFXOTIMEOUTCTRL */
 #define _CMU_HFXOTIMEOUTCTRL_STEADYTIMEOUT_16CYCLES       0x00000002UL                                           /**< Mode 16CYCLES for CMU_HFXOTIMEOUTCTRL */
 #define _CMU_HFXOTIMEOUTCTRL_STEADYTIMEOUT_32CYCLES       0x00000003UL                                           /**< Mode 32CYCLES for CMU_HFXOTIMEOUTCTRL */
+#define _CMU_HFXOTIMEOUTCTRL_STEADYTIMEOUT_DEFAULT        0x00000004UL                                           /**< Mode DEFAULT for CMU_HFXOTIMEOUTCTRL */
 #define _CMU_HFXOTIMEOUTCTRL_STEADYTIMEOUT_64CYCLES       0x00000004UL                                           /**< Mode 64CYCLES for CMU_HFXOTIMEOUTCTRL */
 #define _CMU_HFXOTIMEOUTCTRL_STEADYTIMEOUT_128CYCLES      0x00000005UL                                           /**< Mode 128CYCLES for CMU_HFXOTIMEOUTCTRL */
 #define _CMU_HFXOTIMEOUTCTRL_STEADYTIMEOUT_256CYCLES      0x00000006UL                                           /**< Mode 256CYCLES for CMU_HFXOTIMEOUTCTRL */
 #define _CMU_HFXOTIMEOUTCTRL_STEADYTIMEOUT_1KCYCLES       0x00000007UL                                           /**< Mode 1KCYCLES for CMU_HFXOTIMEOUTCTRL */
-#define _CMU_HFXOTIMEOUTCTRL_STEADYTIMEOUT_DEFAULT        0x00000008UL                                           /**< Mode DEFAULT for CMU_HFXOTIMEOUTCTRL */
 #define _CMU_HFXOTIMEOUTCTRL_STEADYTIMEOUT_2KCYCLES       0x00000008UL                                           /**< Mode 2KCYCLES for CMU_HFXOTIMEOUTCTRL */
 #define _CMU_HFXOTIMEOUTCTRL_STEADYTIMEOUT_4KCYCLES       0x00000009UL                                           /**< Mode 4KCYCLES for CMU_HFXOTIMEOUTCTRL */
 #define _CMU_HFXOTIMEOUTCTRL_STEADYTIMEOUT_8KCYCLES       0x0000000AUL                                           /**< Mode 8KCYCLES for CMU_HFXOTIMEOUTCTRL */
@@ -2131,11 +2110,11 @@ typedef struct {
 #define CMU_HFXOTIMEOUTCTRL_STEADYTIMEOUT_4CYCLES         (_CMU_HFXOTIMEOUTCTRL_STEADYTIMEOUT_4CYCLES << 4)      /**< Shifted mode 4CYCLES for CMU_HFXOTIMEOUTCTRL */
 #define CMU_HFXOTIMEOUTCTRL_STEADYTIMEOUT_16CYCLES        (_CMU_HFXOTIMEOUTCTRL_STEADYTIMEOUT_16CYCLES << 4)     /**< Shifted mode 16CYCLES for CMU_HFXOTIMEOUTCTRL */
 #define CMU_HFXOTIMEOUTCTRL_STEADYTIMEOUT_32CYCLES        (_CMU_HFXOTIMEOUTCTRL_STEADYTIMEOUT_32CYCLES << 4)     /**< Shifted mode 32CYCLES for CMU_HFXOTIMEOUTCTRL */
+#define CMU_HFXOTIMEOUTCTRL_STEADYTIMEOUT_DEFAULT         (_CMU_HFXOTIMEOUTCTRL_STEADYTIMEOUT_DEFAULT << 4)      /**< Shifted mode DEFAULT for CMU_HFXOTIMEOUTCTRL */
 #define CMU_HFXOTIMEOUTCTRL_STEADYTIMEOUT_64CYCLES        (_CMU_HFXOTIMEOUTCTRL_STEADYTIMEOUT_64CYCLES << 4)     /**< Shifted mode 64CYCLES for CMU_HFXOTIMEOUTCTRL */
 #define CMU_HFXOTIMEOUTCTRL_STEADYTIMEOUT_128CYCLES       (_CMU_HFXOTIMEOUTCTRL_STEADYTIMEOUT_128CYCLES << 4)    /**< Shifted mode 128CYCLES for CMU_HFXOTIMEOUTCTRL */
 #define CMU_HFXOTIMEOUTCTRL_STEADYTIMEOUT_256CYCLES       (_CMU_HFXOTIMEOUTCTRL_STEADYTIMEOUT_256CYCLES << 4)    /**< Shifted mode 256CYCLES for CMU_HFXOTIMEOUTCTRL */
 #define CMU_HFXOTIMEOUTCTRL_STEADYTIMEOUT_1KCYCLES        (_CMU_HFXOTIMEOUTCTRL_STEADYTIMEOUT_1KCYCLES << 4)     /**< Shifted mode 1KCYCLES for CMU_HFXOTIMEOUTCTRL */
-#define CMU_HFXOTIMEOUTCTRL_STEADYTIMEOUT_DEFAULT         (_CMU_HFXOTIMEOUTCTRL_STEADYTIMEOUT_DEFAULT << 4)      /**< Shifted mode DEFAULT for CMU_HFXOTIMEOUTCTRL */
 #define CMU_HFXOTIMEOUTCTRL_STEADYTIMEOUT_2KCYCLES        (_CMU_HFXOTIMEOUTCTRL_STEADYTIMEOUT_2KCYCLES << 4)     /**< Shifted mode 2KCYCLES for CMU_HFXOTIMEOUTCTRL */
 #define CMU_HFXOTIMEOUTCTRL_STEADYTIMEOUT_4KCYCLES        (_CMU_HFXOTIMEOUTCTRL_STEADYTIMEOUT_4KCYCLES << 4)     /**< Shifted mode 4KCYCLES for CMU_HFXOTIMEOUTCTRL */
 #define CMU_HFXOTIMEOUTCTRL_STEADYTIMEOUT_8KCYCLES        (_CMU_HFXOTIMEOUTCTRL_STEADYTIMEOUT_8KCYCLES << 4)     /**< Shifted mode 8KCYCLES for CMU_HFXOTIMEOUTCTRL */
@@ -3170,7 +3149,7 @@ typedef struct {
 #define _CMU_HFPERCLKEN0_ACMP1_MASK                       0x200UL                                    /**< Bit mask for CMU_ACMP1 */
 #define _CMU_HFPERCLKEN0_ACMP1_DEFAULT                    0x00000000UL                               /**< Mode DEFAULT for CMU_HFPERCLKEN0 */
 #define CMU_HFPERCLKEN0_ACMP1_DEFAULT                     (_CMU_HFPERCLKEN0_ACMP1_DEFAULT << 9)      /**< Shifted mode DEFAULT for CMU_HFPERCLKEN0 */
-#define CMU_HFPERCLKEN0_CRYOTIMER                         (0x1UL << 10)                              /**< CRYOTIMER Clock Enable */
+#define CMU_HFPERCLKEN0_CRYOTIMER                         (0x1UL << 10)                              /**< CryoTimer Clock Enable */
 #define _CMU_HFPERCLKEN0_CRYOTIMER_SHIFT                  10                                         /**< Shift value for CMU_CRYOTIMER */
 #define _CMU_HFPERCLKEN0_CRYOTIMER_MASK                   0x400UL                                    /**< Bit mask for CMU_CRYOTIMER */
 #define _CMU_HFPERCLKEN0_CRYOTIMER_DEFAULT                0x00000000UL                               /**< Mode DEFAULT for CMU_HFPERCLKEN0 */
@@ -3658,13 +3637,13 @@ typedef struct {
 #define _CMU_LOCK_LOCKKEY_SHIFT                           0                                 /**< Shift value for CMU_LOCKKEY */
 #define _CMU_LOCK_LOCKKEY_MASK                            0xFFFFUL                          /**< Bit mask for CMU_LOCKKEY */
 #define _CMU_LOCK_LOCKKEY_DEFAULT                         0x00000000UL                      /**< Mode DEFAULT for CMU_LOCK */
-#define _CMU_LOCK_LOCKKEY_UNLOCKED                        0x00000000UL                      /**< Mode UNLOCKED for CMU_LOCK */
 #define _CMU_LOCK_LOCKKEY_LOCK                            0x00000000UL                      /**< Mode LOCK for CMU_LOCK */
+#define _CMU_LOCK_LOCKKEY_UNLOCKED                        0x00000000UL                      /**< Mode UNLOCKED for CMU_LOCK */
 #define _CMU_LOCK_LOCKKEY_LOCKED                          0x00000001UL                      /**< Mode LOCKED for CMU_LOCK */
 #define _CMU_LOCK_LOCKKEY_UNLOCK                          0x0000580EUL                      /**< Mode UNLOCK for CMU_LOCK */
 #define CMU_LOCK_LOCKKEY_DEFAULT                          (_CMU_LOCK_LOCKKEY_DEFAULT << 0)  /**< Shifted mode DEFAULT for CMU_LOCK */
-#define CMU_LOCK_LOCKKEY_UNLOCKED                         (_CMU_LOCK_LOCKKEY_UNLOCKED << 0) /**< Shifted mode UNLOCKED for CMU_LOCK */
 #define CMU_LOCK_LOCKKEY_LOCK                             (_CMU_LOCK_LOCKKEY_LOCK << 0)     /**< Shifted mode LOCK for CMU_LOCK */
+#define CMU_LOCK_LOCKKEY_UNLOCKED                         (_CMU_LOCK_LOCKKEY_UNLOCKED << 0) /**< Shifted mode UNLOCKED for CMU_LOCK */
 #define CMU_LOCK_LOCKKEY_LOCKED                           (_CMU_LOCK_LOCKKEY_LOCKED << 0)   /**< Shifted mode LOCKED for CMU_LOCK */
 #define CMU_LOCK_LOCKKEY_UNLOCK                           (_CMU_LOCK_LOCKKEY_UNLOCK << 0)   /**< Shifted mode UNLOCK for CMU_LOCK */
 
@@ -3683,12 +3662,12 @@ typedef struct {
 /** @} */
 /** @} End of group EFM32TG11B120F128GM64_CMU */
 
-/***************************************************************************//**
+/**************************************************************************//**
  * @addtogroup EFM32TG11B120F128GM64_SMU
  * @{
  * @defgroup EFM32TG11B120F128GM64_SMU_BitFields SMU Bit Fields
  * @{
- ******************************************************************************/
+ *****************************************************************************/
 
 /* Bit fields for SMU IF */
 #define _SMU_IF_RESETVALUE                 0x00000000UL                   /**< Default value for SMU_IF */
@@ -3763,7 +3742,7 @@ typedef struct {
 #define _SMU_PPUPATD0_CMU_MASK             0x10UL                                 /**< Bit mask for SMU_CMU */
 #define _SMU_PPUPATD0_CMU_DEFAULT          0x00000000UL                           /**< Mode DEFAULT for SMU_PPUPATD0 */
 #define SMU_PPUPATD0_CMU_DEFAULT           (_SMU_PPUPATD0_CMU_DEFAULT << 4)       /**< Shifted mode DEFAULT for SMU_PPUPATD0 */
-#define SMU_PPUPATD0_CRYOTIMER             (0x1UL << 5)                           /**< CRYOTIMER access control bit */
+#define SMU_PPUPATD0_CRYOTIMER             (0x1UL << 5)                           /**< CryoTimer access control bit */
 #define _SMU_PPUPATD0_CRYOTIMER_SHIFT      5                                      /**< Shift value for SMU_CRYOTIMER */
 #define _SMU_PPUPATD0_CRYOTIMER_MASK       0x20UL                                 /**< Bit mask for SMU_CRYOTIMER */
 #define _SMU_PPUPATD0_CRYOTIMER_DEFAULT    0x00000000UL                           /**< Mode DEFAULT for SMU_PPUPATD0 */
@@ -3999,10 +3978,10 @@ typedef struct {
 /** @} */
 /** @} End of group EFM32TG11B120F128GM64_SMU */
 
-/***************************************************************************//**
+/**************************************************************************//**
  * @defgroup EFM32TG11B120F128GM64_UNLOCK Unlock Codes
  * @{
- ******************************************************************************/
+ *****************************************************************************/
 #define MSC_UNLOCK_CODE      0x1B71 /**< MSC unlock code */
 #define EMU_UNLOCK_CODE      0xADE8 /**< EMU unlock code */
 #define RMU_UNLOCK_CODE      0xE084 /**< RMU unlock code */

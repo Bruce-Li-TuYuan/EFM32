@@ -1,32 +1,34 @@
-/***************************************************************************//**
- * @file
+/**************************************************************************//**
+ * @file efm32tg11b_msc.h
  * @brief EFM32TG11B_MSC register and bit field definitions
- *******************************************************************************
+ * @version 5.4.0
+ ******************************************************************************
  * # License
- * <b>Copyright 2020 Silicon Laboratories Inc. www.silabs.com</b>
- *******************************************************************************
- *
- * SPDX-License-Identifier: Zlib
- *
- * The licensor of this software is Silicon Laboratories Inc.
- *
- * This software is provided 'as-is', without any express or implied
- * warranty. In no event will the authors be held liable for any damages
- * arising from the use of this software.
+ * <b>Copyright 2017 Silicon Laboratories, Inc. www.silabs.com</b>
+ ******************************************************************************
  *
  * Permission is granted to anyone to use this software for any purpose,
  * including commercial applications, and to alter it and redistribute it
  * freely, subject to the following restrictions:
  *
  * 1. The origin of this software must not be misrepresented; you must not
- *    claim that you wrote the original software. If you use this software
- *    in a product, an acknowledgment in the product documentation would be
- *    appreciated but is not required.
+ *    claim that you wrote the original software.@n
  * 2. Altered source versions must be plainly marked as such, and must not be
- *    misrepresented as being the original software.
+ *    misrepresented as being the original software.@n
  * 3. This notice may not be removed or altered from any source distribution.
  *
- ******************************************************************************/
+ * DISCLAIMER OF WARRANTY/LIMITATION OF REMEDIES: Silicon Laboratories, Inc.
+ * has no obligation to support this Software. Silicon Laboratories, Inc. is
+ * providing the Software "AS IS", with no express or implied warranties of any
+ * kind, including, but not limited to, any implied warranties of
+ * merchantability or fitness for any particular purpose or warranties against
+ * infringement of any proprietary rights of a third party.
+ *
+ * Silicon Laboratories, Inc. will not be liable for any consequential,
+ * incidental, or special damages, or any other relief, or for any claim by
+ * any third party, arising from your use of this Software.
+ *
+ *****************************************************************************/
 
 #if defined(__ICCARM__)
 #pragma system_include       /* Treat file as system include file. */
@@ -34,15 +36,15 @@
 #pragma clang system_header  /* Treat file as system include file. */
 #endif
 
-/***************************************************************************//**
- * @addtogroup Parts
- * @{
- ******************************************************************************/
-/***************************************************************************//**
+/**************************************************************************//**
+* @addtogroup Parts
+* @{
+******************************************************************************/
+/**************************************************************************//**
  * @defgroup EFM32TG11B_MSC MSC
  * @{
  * @brief EFM32TG11B_MSC Register Declaration
- ******************************************************************************/
+ *****************************************************************************/
 /** MSC Register Declaration */
 typedef struct {
   __IOM uint32_t CTRL;           /**< Memory System Control Register  */
@@ -50,11 +52,11 @@ typedef struct {
   __IOM uint32_t WRITECTRL;      /**< Write Control Register  */
   __IOM uint32_t WRITECMD;       /**< Write Command Register  */
   __IOM uint32_t ADDRB;          /**< Page Erase/Write Address Buffer  */
-  uint32_t       RESERVED0[1U];  /**< Reserved for future use **/
+  uint32_t       RESERVED0[1];   /**< Reserved for future use **/
   __IOM uint32_t WDATA;          /**< Write Data Register  */
   __IM uint32_t  STATUS;         /**< Status Register  */
 
-  uint32_t       RESERVED1[4U];  /**< Reserved for future use **/
+  uint32_t       RESERVED1[4];   /**< Reserved for future use **/
   __IM uint32_t  IF;             /**< Interrupt Flag Register  */
   __IOM uint32_t IFS;            /**< Interrupt Flag Set Register  */
   __IOM uint32_t IFC;            /**< Interrupt Flag Clear Register  */
@@ -64,26 +66,26 @@ typedef struct {
   __IM uint32_t  CACHEHITS;      /**< Cache Hits Performance Counter  */
   __IM uint32_t  CACHEMISSES;    /**< Cache Misses Performance Counter  */
 
-  uint32_t       RESERVED2[1U];  /**< Reserved for future use **/
+  uint32_t       RESERVED2[1];   /**< Reserved for future use **/
   __IOM uint32_t MASSLOCK;       /**< Mass Erase Lock Register  */
   __IOM uint32_t IRQLATENCY;     /**< Irq Latency Register  */
   __IOM uint32_t STARTUP;        /**< Startup Control  */
 
-  uint32_t       RESERVED3[5U];  /**< Reserved for future use **/
+  uint32_t       RESERVED3[5];   /**< Reserved for future use **/
   __IOM uint32_t CMD;            /**< Command Register  */
 
-  uint32_t       RESERVED4[6U];  /**< Reserved for future use **/
+  uint32_t       RESERVED4[6];   /**< Reserved for future use **/
   __IOM uint32_t BOOTLOADERCTRL; /**< Bootloader Read and Write Enable, Write Once Register  */
   __IOM uint32_t AAPUNLOCKCMD;   /**< Software Unlock AAP Command Register  */
   __IOM uint32_t CACHECONFIG0;   /**< Cache Configuration Register 0  */
 } MSC_TypeDef;                   /** @} */
 
-/***************************************************************************//**
+/**************************************************************************//**
  * @addtogroup EFM32TG11B_MSC
  * @{
  * @defgroup EFM32TG11B_MSC_BitFields MSC Bit Fields
  * @{
- ******************************************************************************/
+ *****************************************************************************/
 
 /* Bit fields for MSC CTRL */
 #define _MSC_CTRL_RESETVALUE                          0x00000001UL                            /**< Default value for MSC_CTRL */
@@ -463,13 +465,13 @@ typedef struct {
 #define _MSC_LOCK_LOCKKEY_SHIFT                       0                                 /**< Shift value for MSC_LOCKKEY */
 #define _MSC_LOCK_LOCKKEY_MASK                        0xFFFFUL                          /**< Bit mask for MSC_LOCKKEY */
 #define _MSC_LOCK_LOCKKEY_DEFAULT                     0x00000000UL                      /**< Mode DEFAULT for MSC_LOCK */
-#define _MSC_LOCK_LOCKKEY_UNLOCKED                    0x00000000UL                      /**< Mode UNLOCKED for MSC_LOCK */
 #define _MSC_LOCK_LOCKKEY_LOCK                        0x00000000UL                      /**< Mode LOCK for MSC_LOCK */
+#define _MSC_LOCK_LOCKKEY_UNLOCKED                    0x00000000UL                      /**< Mode UNLOCKED for MSC_LOCK */
 #define _MSC_LOCK_LOCKKEY_LOCKED                      0x00000001UL                      /**< Mode LOCKED for MSC_LOCK */
 #define _MSC_LOCK_LOCKKEY_UNLOCK                      0x00001B71UL                      /**< Mode UNLOCK for MSC_LOCK */
 #define MSC_LOCK_LOCKKEY_DEFAULT                      (_MSC_LOCK_LOCKKEY_DEFAULT << 0)  /**< Shifted mode DEFAULT for MSC_LOCK */
-#define MSC_LOCK_LOCKKEY_UNLOCKED                     (_MSC_LOCK_LOCKKEY_UNLOCKED << 0) /**< Shifted mode UNLOCKED for MSC_LOCK */
 #define MSC_LOCK_LOCKKEY_LOCK                         (_MSC_LOCK_LOCKKEY_LOCK << 0)     /**< Shifted mode LOCK for MSC_LOCK */
+#define MSC_LOCK_LOCKKEY_UNLOCKED                     (_MSC_LOCK_LOCKKEY_UNLOCKED << 0) /**< Shifted mode UNLOCKED for MSC_LOCK */
 #define MSC_LOCK_LOCKKEY_LOCKED                       (_MSC_LOCK_LOCKKEY_LOCKED << 0)   /**< Shifted mode LOCKED for MSC_LOCK */
 #define MSC_LOCK_LOCKKEY_UNLOCK                       (_MSC_LOCK_LOCKKEY_UNLOCK << 0)   /**< Shifted mode UNLOCK for MSC_LOCK */
 
@@ -513,13 +515,13 @@ typedef struct {
 #define _MSC_MASSLOCK_MASK                            0x0000FFFFUL                          /**< Mask for MSC_MASSLOCK */
 #define _MSC_MASSLOCK_LOCKKEY_SHIFT                   0                                     /**< Shift value for MSC_LOCKKEY */
 #define _MSC_MASSLOCK_LOCKKEY_MASK                    0xFFFFUL                              /**< Bit mask for MSC_LOCKKEY */
-#define _MSC_MASSLOCK_LOCKKEY_UNLOCKED                0x00000000UL                          /**< Mode UNLOCKED for MSC_MASSLOCK */
 #define _MSC_MASSLOCK_LOCKKEY_LOCK                    0x00000000UL                          /**< Mode LOCK for MSC_MASSLOCK */
+#define _MSC_MASSLOCK_LOCKKEY_UNLOCKED                0x00000000UL                          /**< Mode UNLOCKED for MSC_MASSLOCK */
 #define _MSC_MASSLOCK_LOCKKEY_DEFAULT                 0x00000001UL                          /**< Mode DEFAULT for MSC_MASSLOCK */
 #define _MSC_MASSLOCK_LOCKKEY_LOCKED                  0x00000001UL                          /**< Mode LOCKED for MSC_MASSLOCK */
 #define _MSC_MASSLOCK_LOCKKEY_UNLOCK                  0x0000631AUL                          /**< Mode UNLOCK for MSC_MASSLOCK */
-#define MSC_MASSLOCK_LOCKKEY_UNLOCKED                 (_MSC_MASSLOCK_LOCKKEY_UNLOCKED << 0) /**< Shifted mode UNLOCKED for MSC_MASSLOCK */
 #define MSC_MASSLOCK_LOCKKEY_LOCK                     (_MSC_MASSLOCK_LOCKKEY_LOCK << 0)     /**< Shifted mode LOCK for MSC_MASSLOCK */
+#define MSC_MASSLOCK_LOCKKEY_UNLOCKED                 (_MSC_MASSLOCK_LOCKKEY_UNLOCKED << 0) /**< Shifted mode UNLOCKED for MSC_MASSLOCK */
 #define MSC_MASSLOCK_LOCKKEY_DEFAULT                  (_MSC_MASSLOCK_LOCKKEY_DEFAULT << 0)  /**< Shifted mode DEFAULT for MSC_MASSLOCK */
 #define MSC_MASSLOCK_LOCKKEY_LOCKED                   (_MSC_MASSLOCK_LOCKKEY_LOCKED << 0)   /**< Shifted mode LOCKED for MSC_MASSLOCK */
 #define MSC_MASSLOCK_LOCKKEY_UNLOCK                   (_MSC_MASSLOCK_LOCKKEY_UNLOCK << 0)   /**< Shifted mode UNLOCK for MSC_MASSLOCK */
